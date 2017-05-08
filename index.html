@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html ng-app="store" >
+<head>
+	<title> My Book Store</title>
+	
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body background="public/img/imgport.jpg">
+	<!--<div class="container" ng-controller="StoreController as store">
+		<div class="row" ng-hide="!store.product.name">
+			<h1>Product Name: {{store.product.name}}</h1>
+			<h2>Product Price:${{store.product.price}}</h2>
+			<p>Product Description: {{store.product.description}}</p>
+			<button class="btn btn-default glyphicon glyphicon-shopping-cart" ng-show="!store.product.canPurchase">Add to cart</button>
+		</div>
+	</div>-->
+	<div class="container" ng-controller="BooksController as store">
+		<ul class="list-group">
+			<li class="list-group-item" ng-repeat="product in store.products">
+				<h3>{{product.name}}
+					
+				</h3>
+
+				
+				<section ng-controller="PanelController as panel">
+					<ul class="nav nav-pills">
+						
+						<li ng-class="{active:panel.isSelected(1)}"><a href="" ng-click="panel.selectTab(1)">Autor</a></li>
+						<li ng-class="{active:panel.isSelected(2)}"><a href="" ng-click="panel.selectTab(2)">Editorial</a></li>
+						<li ng-class="{active:panel.isSelected(3)}"><a href="" ng-click="panel.selectTab(3)">Descripción</a></li>
+						<li ng-class="{active:panel.isSelected(4)}"><a href="" ng-click="panel.selectTab(4)">Agregar al Carrito</a></li>
+						
+					</ul>
+                    <div>
+					<img ng-src="{{product.images[0].full}}" alt="" height="150" width="150">
+				    </div>
+
+				    <div style="float: right; position: absolute;  right: 30px; bottom: 50px;">
+				    <h4> Pelicula</h4>
+					<img  class="img-thumbnail" ng-src="{{product.images[0].pel}}" alt="" height="100" width="100">
+				    </div>
+                    <a  style="float: right; position: absolute;  right: 30px; bottom: 25px;" href="{{product.link[0].peli}}"> <h4>Link</h4></a>
+					
+					<div class="panel" ng-show= "panel.isSelected(1)">
+						<h4>Autor</h4>
+						<p>{{product.autor}}</p>
+					</div>
+					<div class="panel" ng-show="panel.isSelected(2)">
+						<h4>Editorial</h4>
+						<p>{{product.editorial}}</p>
+					</div>
+					<div class="panel" ng-show= "panel.isSelected(3)">
+						<h4>Descripción</h4>
+						<p>{{product.description}}</p>
+					</div>
+
+					<div class="panel" ng-show= "panel.isSelected(4)">
+						
+						<button class="btn btn-success glyphicon glyphicon-shopping-cart" ng-show="!store.product.canPurchase">Buy</button>
+                    <div style="border-width: 10px;">
+                    <!--
+					<aside style=" float: right; position: absolute;  right: 30px; bottom: 50px;""> 
+					<h4>Peliculas</h4>
+					<a href="https://www.youtube.com/watch?v=l2CSNnByx4Y" ><img  class="img-thumbnail" src="public/img/img4.jpg"  height="100" width="100" alt="Ender"></a>
+                    <a href="https://www.youtube.com/watch?v=lyIwtmlPSKA" ><img  class="img-thumbnail" src="public/img/img5.jpg"  height="100" width="100" alt="Tronos"></a>
+                    <a href="https://www.youtube.com/watch?v=wB5HcjRR5po" ><img  class="img-thumbnail" src="public/img/img6.jpg"  height="100" width="100" alt="Tronos"></a>
+					
+					</aside>-->
+					</div>
+						
+					</div>
+					
+
+
+					
+					<!--
+					<div class="panel" ng-show="panel.isSelected(4)">
+						
+
+						<form name="reviewForm" class="form-horizontal" ng-controller="ReviewController as rCtrl" ng-submit="rCtrl.addReview(product)">
+					  
+						<blockquote ng-repeat="review in product.reviews">
+						<b>Stars: {{review.stars}}</b>
+						{{review.body}}
+						<cite>by: {{review.author}}</cite>
+						</blockquote>
+						<div class="form-group">
+							
+						
+						<label for="stars"> Rate product</label>
+						<select ng-model="rCtrl.review.stars" class="form-control" id="stars">
+							<option value="1">1 Star</option>
+							<option value="2">2 Stars</option>
+							<option value="3">3 Stars</option>
+							<option value="4">4 Stars</option>
+							<option value="5">5 Stars</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="comments">Add your Product comments</label>
+						<textarea   ng-model="rCtrl.review.body" name="" id="comments" cols="30" rows="10" class="form-control" placeholder="Add your comments"></textarea>
+					</div>
+					<div class="form-group">
+						<label class="form-control" for="email">Place add your email</label>
+						<input  ng-model="rCtrl.review.author" type="email" placeholder="emailexample@com">
+					</div>
+					<div class="form-group pull-right">
+						<input  class="form-control btn btn-primary" type="summit" value="Send Review">
+					</div>
+				</form>
+
+				
+			</div> !-->
+		
+				</section >
+				
+			</li>
+
+		</ul>
+		
+	</div>
+
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
