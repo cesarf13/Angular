@@ -13,15 +13,8 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body background="public/img/imgport.jpg">
-	<!--<div class="container" ng-controller="StoreController as store">
-		<div class="row" ng-hide="!store.product.name">
-			<h1>Product Name: {{store.product.name}}</h1>
-			<h2>Product Price:${{store.product.price}}</h2>
-			<p>Product Description: {{store.product.description}}</p>
-			<button class="btn btn-default glyphicon glyphicon-shopping-cart" ng-show="!store.product.canPurchase">Add to cart</button>
-		</div>
-	</div>-->
-	<div class="container" ng-controller="BooksController as store">
+	
+	<div  style="background:#9E9292;" class="container" ng-controller="BooksController as store">
 		<ul class="list-group">
 			<li class="list-group-item" ng-repeat="product in store.products">
 				<h3>{{product.name}}
@@ -36,17 +29,19 @@
 						<li ng-class="{active:panel.isSelected(2)}"><a href="" ng-click="panel.selectTab(2)">Editorial</a></li>
 						<li ng-class="{active:panel.isSelected(3)}"><a href="" ng-click="panel.selectTab(3)">Descripción</a></li>
 						<li ng-class="{active:panel.isSelected(4)}"><a href="" ng-click="panel.selectTab(4)">Agregar al Carrito</a></li>
+						<li ng-class="{active:panel.isSelected(5)}"><a href="" ng-click="panel.selectTab(5)">Reviews</a></li>
+
 						
 					</ul>
                     <div>
-					<img ng-src="{{product.images[0].full}}" alt="" height="150" width="150">
+					<a href=""><img ng-src="{{product.images[0].full}}" alt="" height="150" width="150"></a>
 				    </div>
 
-				    <div style="float: right; position: absolute;  right: 30px; bottom: 50px;">
-				    <h4> Pelicula</h4>
+				    <div style="float: right; position: absolute;  right: 30px; bottom: 160px;">
+				    <h4 style="float: right; position: absolute;  right: 25px; bottom: 145px;"> Pelicula</h4>
 					<img  class="img-thumbnail" ng-src="{{product.images[0].pel}}" alt="" height="100" width="100">
 				    </div>
-                    <a  style="float: right; position: absolute;  right: 30px; bottom: 25px;" href="{{product.link[0].peli}}"> <h4>Link</h4></a>
+                    <a  style="float: right; position: absolute;  right: 50px; bottom: 125px;" href="{{product.link[0].peli}}"> <h4>Avance</h4></a>
 					
 					<div class="panel" ng-show= "panel.isSelected(1)">
 						<h4>Autor</h4>
@@ -65,14 +60,8 @@
 						
 						<button class="btn btn-success glyphicon glyphicon-shopping-cart" ng-show="!store.product.canPurchase">Buy</button>
                     <div style="border-width: 10px;">
-                    <!--
-					<aside style=" float: right; position: absolute;  right: 30px; bottom: 50px;""> 
-					<h4>Peliculas</h4>
-					<a href="https://www.youtube.com/watch?v=l2CSNnByx4Y" ><img  class="img-thumbnail" src="public/img/img4.jpg"  height="100" width="100" alt="Ender"></a>
-                    <a href="https://www.youtube.com/watch?v=lyIwtmlPSKA" ><img  class="img-thumbnail" src="public/img/img5.jpg"  height="100" width="100" alt="Tronos"></a>
-                    <a href="https://www.youtube.com/watch?v=wB5HcjRR5po" ><img  class="img-thumbnail" src="public/img/img6.jpg"  height="100" width="100" alt="Tronos"></a>
+                  
 					
-					</aside>-->
 					</div>
 						
 					</div>
@@ -80,8 +69,8 @@
 
 
 					
-					<!--
-					<div class="panel" ng-show="panel.isSelected(4)">
+					
+					<div class="panel" ng-show="panel.isSelected(5)">
 						
 
 						<form name="reviewForm" class="form-horizontal" ng-controller="ReviewController as rCtrl" ng-submit="rCtrl.addReview(product)">
@@ -117,7 +106,7 @@
 				</form>
 
 				
-			</div> !-->
+			</div> 
 		
 				</section >
 				
